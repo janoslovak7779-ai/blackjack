@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/janoslovak7779-ai/blackjack/",
+  "homepage": "https://janoslovak7779-ai.github.io/blackjack",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
