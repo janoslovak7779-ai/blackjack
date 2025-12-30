@@ -26,7 +26,6 @@ function Waitress({ onDismiss }) {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 className="waitress-backdrop"
-                onClick={onDismiss}
             />
 
             {/* Waitress Card - Center Screen */}
