@@ -1,0 +1,77 @@
+/* `src/src/components/blackJackComponents/PlayingHand.css` */
+
+.playing-hand {
+    /* Match `bj-header` / `bj-stat` look */
+    --hand-bg: rgba(10, 12, 10, 0.55);
+    --hand-border: rgba(212, 175, 55, 0.16);
+    --hand-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    --text: rgba(255, 255, 255, 0.92);
+    --muted: rgba(255, 255, 255, 0.75);
+
+    padding: 1rem;
+    border-radius: 16px;
+    border: 1px solid var(--hand-border);
+    background: var(--hand-bg);
+    box-shadow: var(--hand-shadow);
+    backdrop-filter: blur(8px);
+}
+
+.playing-hand__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.playing-hand__title {
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: 0.2px;
+    color: var(--text);
+    font-weight: 700;
+    font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+}
+
+.playing-hand__meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.playing-hand__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    align-items: flex-end;
+}
+
+.playing-hand__card {
+    /* Slight “fan” overlap on larger screens */
+    margin-left: 0;
+    filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.55));
+    transform-origin: bottom center;
+}
+
+@media (min-width: 576px) {
+    .playing-hand__cards {
+        gap: 0.35rem;
+    }
+
+    .playing-hand__card {
+        margin-left: -10px;
+    }
+
+    .playing-hand__card:first-child {
+        margin-left: 0;
+    }
+}
+
+/* Accessibility: reduce motion if user prefers */
+@media (prefers-reduced-motion: reduce) {
+    .playing-hand__card {
+        transition: none;
+    }
+}

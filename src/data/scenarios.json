@@ -1,0 +1,101 @@
+[
+  {
+    "id": "E1",
+    "difficulty": "easy",
+    "title": "Safe round",
+    "hint": "",
+    "startingAmount": 1000,
+    "endWithAmount": 1100,
+    "timeLimit": 120,
+    "probabilityOfActivityCard": 0.4,
+    "type": "blackjack"
+  },
+  {
+    "id": "E2",
+    "difficulty": "easy",
+    "title": "Steady climb",
+    "hint": "",
+    "startingAmount": 500,
+    "endWithAmount": 625,
+    "timeLimit": 120,
+    "probabilityOfActivityCard": 0.3,
+    "type": "blackjack"
+  },
+  {
+    "id": "E3",
+    "difficulty": "easy",
+    "title": "Calm under pressure",
+    "hint": "",
+    "startingAmount": 200,
+    "endWithAmount": 250,
+    "timeLimit": 60,
+    "probabilityOfActivityCard": 0.3,
+    "type": "blackjack"
+  },
+  {
+    "id": "M4",
+    "difficulty": "medium",
+    "title": "Make it count",
+    "hint": "",
+    "startingAmount": 500,
+    "endWithAmount": 850,
+    "timeLimit": 60,
+    "probabilityOfActivityCard": 0.2,
+    "type": "blackjack"
+  },
+  {
+    "id": "M5",
+    "difficulty": "medium",
+    "title": "Risk for reward",
+    "hint": "",
+    "startingAmount": 400,
+    "endWithAmount": 800,
+    "timeLimit": 60,
+    "probabilityOfActivityCard": 0.2,
+    "type": "blackjack"
+  },
+  {
+    "id": "M6",
+    "difficulty": "medium",
+    "title": "Beat the clock",
+    "hint": "",
+    "startingAmount": 100,
+    "endWithAmount": 200,
+    "timeLimit": 20,
+    "probabilityOfActivityCard": 0.2,
+    "type": "blackjack"
+  },
+  {
+    "id": "H7",
+    "difficulty": "hard",
+    "title": "Tight window",
+    "hint": "",
+    "startingAmount": 250,
+    "endWithAmount": 600,
+    "timeLimit": 60,
+    "probabilityOfActivityCard": 0.1,
+    "type": "blackjack"
+  },
+  {
+    "id": "H8",
+    "difficulty": "hard",
+    "title": "All in on time",
+    "hint": "",
+    "startingAmount": 250,
+    "endWithAmount": 1000,
+    "timeLimit": 60,
+    "probabilityOfActivityCard": 0.1,
+    "type": "blackjack"
+  },
+  {
+    "id": "H9",
+    "difficulty": "hard",
+    "title": "No room for error",
+    "hint": "",
+    "startingAmount": 100,
+    "endWithAmount": 500,
+    "timeLimit": 50,
+    "probabilityOfActivityCard": 0.1,
+    "type": "blackjack"
+  }
+]

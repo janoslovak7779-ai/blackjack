@@ -1,0 +1,102 @@
+/* src/components/Chip.css */
+
+.chip {
+    width: 51px;
+    height: 51px;
+    border-radius: 9999px;
+
+    display: grid;
+    place-items: center;
+
+    font-weight: 800;
+    font-size: 1rem;
+    line-height: 1;
+
+    border: 3px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+    user-select: none;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: grab;
+}
+
+.chip:active {
+    cursor: grabbing;
+}
+
+.chip > span {
+    margin: 0;
+}
+
+.chip::before {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    border-radius: 9999px;
+    border: 2px dashed rgba(0, 0, 0, 0.2);
+    /*opacity: 0.7;*/
+}
+
+/* Farby */
+.chip[data-value="1"]   { background: white;      color: #0b1220; }
+.chip[data-value="10"]  { background: #3b82f6;     color: #0b1220; }
+.chip[data-value="25"]  { background: #22c55e;     color: #0b1220; }
+.chip[data-value="50"]  { background: #f59e0b;     color: #0b1220; }
+.chip[data-value="100"] { background: #ef4444;     color: #0b1220; }
+.chip[data-value="500"] { background: #8b5cf6;     color: #0b1220; }
+
+/* ALL IN button */
+.mybutton {
+    background-color: red;
+    transform: scale(0.8);
+}
+
+.mybutton:hover { background-color: darkred; }
+.mybutton:disabled { background-color: darkred; opacity: 0.5; }
+
+/* =============== JEDNODUCHÝ 3D STACK =============== */
+
+.chip-stack {
+    position: relative;
+    width: 51px;
+    height: 80px; /* Dostatočná výška pre vysoké stacky */
+    margin: 0 10px;
+}
+
+.chip-position {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 51px;
+    height: 51px;
+}
+
+/* Hover efekt – len pre draggable (horný) čip */
+.chip[draggable="true"]:hover {
+    transform: translateY(-12px) !important;
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.5);
+}
+
+/* Spodné čipy – žiadny cursor, ale neblokujú drag */
+.chip:not([draggable="true"]) {
+    cursor: default;
+}
+.chip {
+    /* ... tvoj existujúci štýl ... */
+    cursor: grab;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.chip:active {
+    cursor: grabbing;
+}
+
+.chip[draggable="true"] {
+    cursor: grab;
+}
+
+/* Počas dragovania ešte výraznejší efekt */
+.chip[style*="z-index: 1000"] {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6) !important;
+}

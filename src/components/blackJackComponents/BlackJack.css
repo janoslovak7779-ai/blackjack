@@ -1,0 +1,383 @@
+
+body {
+    /* Deep navy felt + subtle vignette to match the glass panels */
+    background:
+            radial-gradient(1200px 700px at 50% -10%, rgba(212,175,55,0.10), rgba(0,0,0,0) 60%),
+            radial-gradient(900px 600px at 20% 20%, rgba(30, 80, 60, 0.30), rgba(0,0,0,0) 55%),
+            radial-gradient(900px 600px at 80% 30%, rgba(20, 35, 90, 0.35), rgba(0,0,0,0) 55%),
+            linear-gradient(180deg, #050821 0%, #050617 45%, #03030d 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #03030d;
+    color: rgba(255,255,255,0.92);
+}
+
+button {
+    height: 50px;
+    width: 150px;
+}
+
+.btn {
+    height: 50px;
+    min-width: 150px;
+    padding: 10px 18px;
+
+    border-radius: 12px;
+    border: 1px solid rgba(212,175,55,0.22);
+    background: rgba(10,12,10,0.55);
+    color: rgba(255,255,255,0.92);
+
+    backdrop-filter: blur(6px);
+    box-shadow:
+            0 12px 28px rgba(0,0,0,0.45),
+            0 0 0 1px rgba(255,255,255,0.06) inset;
+
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    transition: transform 120ms ease, filter 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+}
+
+.btn:hover:not(:disabled) {
+    border-color: rgba(212,175,55,0.34);
+    box-shadow:
+            0 16px 36px rgba(0,0,0,0.55),
+            0 0 0 1px rgba(255,255,255,0.08) inset,
+            0 0 22px rgba(212,175,55,0.10);
+    filter: brightness(1.05);
+}
+
+.btn:active:not(:disabled) {
+    transform: translateY(0px);
+    filter: brightness(0.98);
+}
+
+.btn:disabled,
+.btn.disabled {
+    opacity: 0.55;
+    filter: saturate(0.85);
+    cursor: not-allowed;
+}
+
+/* Deal / New Game (btn-success) \- “emerald felt” */
+.btn.btn-success {
+    background:
+            radial-gradient(900px 420px at 50% 20%, rgba(212,175,55,0.16), rgba(0,0,0,0) 60%),
+            linear-gradient(180deg, rgba(16,185,129,0.38) 0%, rgba(10,12,10,0.70) 100%);
+    border-color: rgba(212,175,55,0.26);
+}
+
+/* Hit / Stand (btn-secondary) \- neutral glass */
+.btn.btn-secondary {
+    background:
+            radial-gradient(900px 420px at 50% 20%, rgba(255,255,255,0.08), rgba(0,0,0,0) 60%),
+            linear-gradient(180deg, rgba(148,163,184,0.22) 0%, rgba(10,12,10,0.72) 100%);
+    border-color: rgba(212,175,55,0.20);
+}
+
+/* optional: nicer keyboard focus */
+.btn:focus-visible {
+    outline: none;
+    box-shadow:
+            0 0 0 2px rgba(212,175,55,0.28),
+            0 16px 36px rgba(0,0,0,0.55);
+}
+
+.card-deck {
+    flex: 0 0 auto;
+    width: 50%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.card-deck {
+    transform: scale(0.9);
+    transform-origin: top center;
+}
+
+.min-vh {
+    min-height: 85vh;
+}
+
+.bj-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:10px 14px;
+
+    background:rgba(10,12,10,0.55);
+    border:1px solid rgba(212,175,55,0.22);
+    border-radius:12px;
+    backdrop-filter:blur(8px);
+
+    color:rgba(255,255,255,0.92);
+}
+
+.bj-header__left,
+.bj-header__right{
+    flex:1;
+    min-width:140px;
+}
+
+.bj-header__left{ text-align:left; }
+.bj-header__right{ text-align:right; }
+
+.bj-header__meta{
+    display:inline-block;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,0.72);
+    padding:6px 10px;
+    border:1px solid rgba(255,255,255,0.10);
+    border-radius:999px;
+    background:rgba(0,0,0,0.28);
+}
+
+.bj-header__title{
+    flex:0 1 auto;
+    margin:0;
+    padding:0 10px;
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    text-align:center;
+    color:rgba(255,255,255,0.94);
+    text-shadow:0 1px 0 rgba(0,0,0,0.55);
+}
+
+.bj-header__time{
+    font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    letter-spacing:0.12em;
+}
+
+/* `src/src/components/blackJackComponents/BlackJack.css` */
+/* Minimal casino objective line */
+
+.bj-objective{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:10px 14px;
+
+    background:rgba(10,12,10,0.55);
+    border:1px solid rgba(212,175,55,0.16);
+    border-radius:12px;
+    backdrop-filter:blur(6px);
+
+    color:rgba(255,255,255,0.85);
+}
+
+.bj-objective__label{
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:rgba(212,175,55,0.85);
+}
+
+.bj-objective__text{
+    font-size:13px;
+    letter-spacing:0.02em;
+    color:rgba(255,255,255,0.78);
+}
+
+.bj-objective__amount{
+    font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-weight:700;
+    letter-spacing:0.06em;
+    color:rgba(255,255,255,0.92);
+}
+
+.bj-stats{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.bj-stat{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    padding:10px 12px;
+
+    background:rgba(10,12,10,0.55);
+    border:1px solid rgba(212,175,55,0.16);
+    border-radius:12px;
+    backdrop-filter:blur(6px);
+}
+
+.bj-stat__label{
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,0.70);
+}
+
+.bj-stat__value{
+    font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size:16px;
+    font-weight:800;
+    letter-spacing:0.06em;
+    color:rgba(255,255,255,0.94);
+    text-shadow:0 1px 0 rgba(0,0,0,0.55);
+}
+
+/* `src/src/components/blackJackComponents/BlackJack.css` */
+
+.bj-toast-wrap{
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.bj-toast{
+    position: relative;
+    min-width: 320px;
+    max-width: min(560px, calc(100vw - 24px));
+    padding: 12px 14px;
+
+    border-radius: 14px;
+    border: 1px solid rgba(212, 175, 55, 0.26);
+
+    background:
+            radial-gradient(520px 160px at 22% 0%, rgba(212,175,55,0.14), rgba(0,0,0,0) 60%),
+            linear-gradient(180deg, rgba(10,12,10,0.70) 0%, rgba(10,12,10,0.86) 100%);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+            0 18px 44px rgba(0,0,0,0.70),
+            0 0 0 1px rgba(255,255,255,0.06) inset,
+            0 0 26px rgba(212,175,55,0.12);
+
+    pointer-events: none;
+}
+
+.bj-toast__glow{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    pointer-events: none;
+    opacity: 0.85;
+    mix-blend-mode: screen;
+    background: radial-gradient(260px 120px at 30% 25%, rgba(255,255,255,0.10), rgba(255,255,255,0) 65%);
+}
+
+.bj-toast__content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.bj-toast__label{
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(212,175,55,0.92);
+}
+
+.bj-toast__message{
+    font-size: 14px;
+    color: rgba(255,255,255,0.92);
+    text-shadow: 0 0 18px rgba(212,175,55,0.18);
+}
+
+/* Variants */
+.bj-toast--success{
+    box-shadow:
+            0 18px 44px rgba(0,0,0,0.70),
+            0 0 0 1px rgba(255,255,255,0.06) inset,
+            0 0 30px rgba(16,185,129,0.16);
+    border-color: rgba(16,185,129,0.28);
+}
+
+.bj-toast--warning{
+    box-shadow:
+            0 18px 44px rgba(0,0,0,0.70),
+            0 0 0 1px rgba(255,255,255,0.06) inset,
+            0 0 30px rgba(245,158,11,0.14);
+    border-color: rgba(245,158,11,0.28);
+}
+
+.bj-toast--danger{
+    box-shadow:
+            0 18px 44px rgba(0,0,0,0.70),
+            0 0 0 1px rgba(255,255,255,0.06) inset,
+            0 0 30px rgba(239,68,68,0.14);
+    border-color: rgba(239,68,68,0.28);
+}
+
+@media (max-width: 576px){
+    .bj-header{
+        flex-direction:column;
+        align-items:stretch;
+        gap:8px;
+    }
+    .bj-header__left,
+    .bj-header__right{
+        text-align:center;
+        min-width:auto;
+    }
+    .bj-header__title{
+        font-size:16px;
+    }
+}
+
+@media (min-width: 768px) {
+    .card-deck {
+        flex: 0 0 auto;
+        width: 35%;
+        transform: none;
+    }
+
+    .min-vh {
+        min-height: 90vh;
+    }
+}
+
+/* `src/src/components/blackJackComponents/BlackJack.css` (or your main css) */
+
+/* Small screens: constrain modal height and make body scroll */
+@media (max-width: 576px) {
+    .game-menu__panel {
+        max-height: calc(100vh - 1rem);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .game-menu__content {
+        flex: 1 1 auto;
+        overflow-y: auto;
+        max-height: none !important;
+    }
+
+    .options {
+        flex-wrap: wrap;
+        row-gap: 0.5rem;
+        column-gap: 0.5rem;
+    }
+
+    .options > button {
+        flex: 1 1 calc(50% - 0.5rem); /* 2 per row */
+        justify-content: center;
+        white-space: nowrap;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+}
+
+

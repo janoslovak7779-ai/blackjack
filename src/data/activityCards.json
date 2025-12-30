@@ -1,0 +1,110 @@
+[
+  {
+    "id": "AC_FLIP",
+    "name": "Flip",
+    "uses": 1,
+    "abilities": {
+      "upperPart": {
+        "label": "Reroll dealer upcard",
+        "effect": {
+          "type": "dealerUpcardReroll"
+        },
+        "debuffs": []
+      },
+      "lowerPart": {
+        "label": "Peek next card",
+        "effect": {
+          "type": "peekNextCard"
+        },
+        "debuffs": [
+          {
+            "type": "timePenaltySeconds",
+            "value": 5,
+            "label": "Time penalty of 5 seconds"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "AC_LOCK",
+    "name": "Lock",
+    "uses": 1,
+    "abilities": {
+      "upperPart": {
+        "label": "Freeze dealer total for 1 draw",
+        "effect": {
+          "type": "dealerFreezeNextDraw"
+        },
+        "debuffs": []
+      },
+      "lowerPart": {
+        "label": "Force dealer to hit once",
+        "effect": {
+          "type": "dealerForceHit"
+        },
+        "debuffs": []
+      }
+    }
+  },
+  {
+    "id": "AC_TRADE",
+    "name": "Trade",
+    "uses": 1,
+    "abilities": {
+      "upperPart": {
+        "label": "Swap one card with dealer",
+        "effect": {
+          "type": "swapSingleCard"
+        },
+        "debuffs": []
+      },
+      "lowerPart": {
+        "label": "Discard and redraw one player card",
+        "effect": {
+          "type": "playerMulligan"
+        },
+        "debuffs": [
+          {
+            "type": "chipTaxPercent",
+            "value": 10,
+            "label": "Chip tax of 10%"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "AC_ADD",
+    "name": "Add",
+    "uses": 1,
+    "abilities": {
+      "upperPart": {
+        "label": "Add +2 to player total",
+        "effect": {
+          "type": "modifyPlayerTotalByTwo"
+        },
+        "debuffs": [
+          {
+            "type": "disableDouble",
+            "value": true,
+            "label": "Disable doubles"
+          }
+        ]
+      },
+      "lowerPart": {
+        "label": "Add 200 to bet",
+        "effect": {
+          "type": "addBet"
+        },
+        "debuffs": [
+          {
+            "type": "betMultiplayer",
+            "value": 0.9,
+            "label": "Bet multiplier of 90%"
+          }
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,38 @@
+
+.playing-card {
+    width: 88px;
+    height: 124px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+    padding: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.playing-card p {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.playing-card h1 {
+    margin: 0;
+    font-size: 44px;
+    line-height: 1;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.playing-card__red {
+    color: #dc3545 !important;
+}

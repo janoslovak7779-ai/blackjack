@@ -1,0 +1,327 @@
+/* Optional additional styles for GameMenu - can be added to App.css */
+
+/* Menu backdrop animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Menu slide in animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Apply animations to menu */
+.position-fixed[style*="z-index: 1060"] {
+    animation: fadeIn 0.2s ease-out;
+}
+
+.position-fixed[style*="z-index: 1060"] > div {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Smooth scrollbar for menu content */
+.overflow-auto::-webkit-scrollbar {
+    width: 8px;
+}
+
+.overflow-auto::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.overflow-auto::-webkit-scrollbar-thumb {
+    background: rgba(255, 193, 7, 0.4);
+    border-radius: 4px;
+}
+
+.overflow-auto::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 193, 7, 0.6);
+}
+
+/* Menu button pulse animation */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(255, 193, 7, 0);
+    }
+}
+
+.btn-warning.rounded-circle:hover {
+    animation: pulse 1.5s infinite;
+}
+
+/* Progress bar smooth animation */
+.progress-bar {
+    transition: width 1s ease-out;
+}
+
+/* Tab button transitions */
+.d-flex.gap-1.px-4.pt-3 button {
+    transition: all 0.2s ease;
+}
+
+/* Level card hover effect */
+.col-12.col-md-6 > div {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.col-12.col-md-6 > div:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Stat card animations */
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.display-4 {
+    animation: countUp 0.5s ease-out;
+}
+body {
+    background-color: #00003E;
+}
+
+button{
+    height: 50px;
+    width: 150px;
+}
+
+.card-deck {
+    flex: 0 0 auto;
+    width: 50%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.card-deck {
+    transform: scale(0.9);
+    transform-origin: top center;
+}
+
+.min-vh{
+    min-height: 85vh;
+}
+
+/* `src/App.css` (or the css file used by `GameMenu`) */
+
+.game-menu__content ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+
+@media (min-width: 768px) {
+    .card-deck {
+        flex: 0 0 auto;
+        width: 35%;
+        transform: none;
+    }
+    .min-vh{
+        min-height: 90vh;
+    }
+}
+
+/* `src/App.css` */
+
+/* Close (X) button: smaller on small screens */
+@media (max-width: 576px) {
+    .game-menu__panel .btn.btn-link {
+        padding: 0.25rem !important;
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .game-menu__panel .btn.btn-link svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Optional: tighten the header a bit so everything fits */
+    .game-menu__panel > .d-flex.align-items-center.justify-content-between {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+
+    /* shrink menu body padding so cards fit */
+    .game-menu__content {
+        padding: 0.75rem !important;
+        max-height: calc(100vh - 8.5rem) !important; /* header+tabs+footer allowance */
+    }
+
+    /* tighter section header */
+    .game-menu__content h3.h5 {
+        font-size: 1rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+
+    .game-menu__content p.text-secondary {
+        font-size: 0.9rem !important;
+    }
+    button {
+        font-size: 0.9rem !important;
+        line-height: 1.25rem;
+    }
+
+    /* tighter grid spacing between level cards */
+    .game-menu__content .row.g-3 {
+        --bs-gutter-x: 0.5rem;
+        --bs-gutter-y: 0.5rem;
+    }
+
+    /* make the level cards/panels more compact */
+    .game-menu__content .col-12.col-md-6 > div {
+        padding: 0.75rem !important;
+        border-radius: 0.75rem !important;
+    }
+
+    /* reduce big number sizes inside cards (e.g., "Level X") */
+    .game-menu__content .col-12.col-md-6 .display-4 {
+        font-size: 1.6rem !important;
+        line-height: 1.1 !important;
+        margin-bottom: 0.25rem !important;
+    }
+
+    /* slightly smaller labels inside cards */
+    .game-menu__content .col-12.col-md-6 .fw-bold,
+    .game-menu__content .col-12.col-md-6 .fw-medium,
+    .game-menu__content .col-12.col-md-6 .text-secondary {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Optional: ultra-small screens (very narrow phones) */
+@media (max-width: 360px) {
+    .game-menu__content {
+        padding: 0.5rem !important;
+    }
+
+    .game-menu__content .col-12.col-md-6 > div {
+        padding: 0.6rem !important;
+    }
+
+    .game-menu__content .col-12.col-md-6 .display-4 {
+        font-size: 1.4rem !important;
+    }
+}
+
+/* `src/App.css` */
+
+@media print {
+    /* Page setup */
+    @page {
+        size: auto;
+        margin: 12mm;
+    }
+
+    html, body {
+        background: #fff !important;
+        color: #000 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* Hide everything by default, then opt-in the menu content */
+    body * {
+        visibility: hidden !important;
+    }
+
+    /* Show the menu panel and its descendants */
+    .game-menu__panel,
+    .game-menu__panel * {
+        visibility: visible !important;
+    }
+
+    /* Remove overlay behavior and make it flow in the page */
+    .position-fixed[style*="z-index: 1060"] {
+        position: static !important;
+        inset: auto !important;
+        width: auto !important;
+        height: auto !important;
+        padding: 0 !important;
+        background: transparent !important;
+        backdrop-filter: none !important;
+    }
+
+    .game-menu__panel {
+        max-width: none !important;
+        width: 100% !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        background: transparent !important;
+    }
+
+    /* Hide header, tabs, footer controls */
+    .game-menu__panel > .d-flex.align-items-center.justify-content-between,
+    .game-menu__panel .options,
+    .game-menu__panel .px-4.py-3.border-top {
+        display: none !important;
+    }
+
+    /* Prevent clipped/scrollable areas and print full content */
+    .game-menu__content {
+        max-height: none !important;
+        overflow: visible !important;
+        padding: 0 !important;
+        text-align: left !important; /* more readable on paper */
+    }
+
+    /* Make content print-friendly */
+    .game-menu__content,
+    .game-menu__content * {
+        color: #000 !important;
+        background: transparent !important;
+        text-shadow: none !important;
+        box-shadow: none !important;
+        border-color: #bbb !important;
+    }
+
+    /* Lists: restore bullets for printing */
+    .game-menu__content ul {
+        list-style: disc !important;
+        padding-left: 1.25rem !important;
+        margin-left: 0 !important;
+    }
+
+    /* Avoid awkward page breaks inside cards/panels */
+    .game-menu__content .p-3,
+    .game-menu__content .p-4,
+    .game-menu__content .col-12.col-md-6 > div {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* Links: show URLs on paper */
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.9em;
+    }
+}
+
